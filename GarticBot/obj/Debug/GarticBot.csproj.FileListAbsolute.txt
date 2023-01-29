@@ -1,0 +1,26 @@
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\bin\Debug\GarticBot.exe.config
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\bin\Debug\GarticBot.exe
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\bin\Debug\GarticBot.pdb
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.AssemblyReference.cache
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.Form1.resources
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.Properties.Resources.resources
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.GenerateResource.cache
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.CoreCompileInputs.cache
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.exe
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.pdb
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\bin\Debug\ColorHelper.dll
+C:\Users\Vyacheslav\source\repos\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.CopyComplete
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\bin\Debug\GarticBot.exe.config
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\bin\Debug\GarticBot.exe
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\bin\Debug\GarticBot.pdb
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\bin\Debug\ColorHelper.dll
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.AssemblyReference.cache
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.Form1.resources
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.Properties.Resources.resources
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.GenerateResource.cache
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.CoreCompileInputs.cache
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.csproj.CopyComplete
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.exe
+C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\GarticBot\obj\Debug\GarticBot.pdb
