@@ -25,7 +25,7 @@ namespace GarticBot
         MouseClick mc = new MouseClick();
         PrepareImage pi = new PrepareImage();
         Bitmap BitmapSource, BitmapResize, source;
-        Bitmap GarticPalette = new Bitmap(@"C:\Users\Vyacheslav\source\repos\готовые проекты\GarticBot\Image\Gartic.png");
+        Bitmap GarticPalette = new Bitmap(@"Image\Gartic.png");
 
 
         private Thread thread;
