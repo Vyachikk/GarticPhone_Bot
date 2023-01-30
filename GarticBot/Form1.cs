@@ -10,7 +10,7 @@ namespace GarticBot
     {
         int brightness = 0;
         int pixelSize = 18;
-        int brushX = 740;
+        int brushX = 730;
         int brushY = 740;
 
 
@@ -127,7 +127,7 @@ namespace GarticBot
 
                             else if (PaletteColor.Color == ImageColor.Color)
                             {
-                                mc.btnSet_Click((x + 385) + x * 40, (int)(y + 310 + numericUpDown1.Value * 20 + y * 40));
+                                mc.btnSet_Click((x + 375) + x * 40, (int)(y + 310 + numericUpDown1.Value * 20 + y * 40));
                                 mc.btnSet_Click(i + 530, j + 250);
                                 CurrentColor.Color = PaletteColor.Color;
                             }
