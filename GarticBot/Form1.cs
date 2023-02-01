@@ -8,10 +8,15 @@ namespace GarticBot
 {
     public partial class Form1 : Form
     {
+        //эталонные значения при full hd и 100% масштабировании
         int brightness = 0;
         int pixelSize = 18;
-        int brushX = 730;
-        int brushY = 740;
+        int brushX = 950;
+        int brushY = 925;
+        int palletteX = 490;
+        int palletteY = 390;
+        int canvasX = 640;
+        int canvasY = 300;
 
 
         string radioButton_Tag = "RGB";
@@ -65,7 +70,7 @@ namespace GarticBot
             thread = new Thread(Painting);
             WindowState = FormWindowState.Minimized;
             setResolution();
-            mc.btnSet_Click(1300, 310);
+            mc.btnSet_Click(1670, 400);
             thread.Start();
         }
 
@@ -122,13 +127,13 @@ namespace GarticBot
 
                             else if (PaletteColor.Color == CurrentColor.Color)
                             {
-                                mc.btnfast_Click(i + 530, j + 250);
+                                mc.btnfast_Click(i + canvasX, j + canvasY);
                             }
 
                             else if (PaletteColor.Color == ImageColor.Color)
                             {
-                                mc.btnSet_Click((x + 375) + x * 40, (int)(y + 310 + numericUpDown1.Value * 20 + y * 40));
-                                mc.btnSet_Click(i + 530, j + 250);
+                                mc.btnSet_Click((x + palletteX) + x * 50, (int)(y + palletteY + numericUpDown1.Value * 20 + y * 50));
+                                mc.btnSet_Click(i + canvasX, j + canvasY);
                                 CurrentColor.Color = PaletteColor.Color;
                             }
                         }
@@ -148,7 +153,7 @@ namespace GarticBot
 
         private void setResolution() //Set brush size
         {
-            mc.btnSet_Click(brushX - 50 * (resolution_trackBar.Value - 1), brushY);
+            mc.btnSet_Click(brushX - 65 * (resolution_trackBar.Value - 1), brushY);
         }
 
         private void getPixelSize(object sender, EventArgs e)
