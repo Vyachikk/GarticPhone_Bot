@@ -82,10 +82,10 @@ namespace GarticBot
                 short keySPACE = GetAsyncKeyState(VK_SPACE);
 
                 if (keySPACE != 0)
-                    thread.Abort();            
+                    thread.Abort();
             }
         }
-
+         
         private void ColorModel_changer(object sender, EventArgs e)
         {
             if (radioButton1.Checked == true)
