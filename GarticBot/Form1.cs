@@ -103,43 +103,24 @@ namespace GarticBot
             UpdatePicture();
         }
 
+        //Функция рисования
 
         public void Painting()
         {
             SolidBrush PaletteColor = new SolidBrush(Color.Empty);
-            SolidBrush ImageColor = new SolidBrush(Color.Empty);
-            SolidBrush CurrentColor = new SolidBrush(Color.Empty);
-            
-            for (int i = 0; i < source.Width; i += pixelSize)
-            {
-                for (int j = 0; j < source.Height; j += pixelSize)
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 6; j++)
                 {
-                    ImageColor.Color = source.GetPixel(i, j);
+                    PaletteColor.Color = GarticPalette.GetPixel(i, j);
+                    mc.btnSet_Click((i * 50 + palletteX), (int)(j * 50 + palletteY + numericUpDown1.Value * 20));
 
-                    for (int x = 0; x < 3; x++)
-                    {
-                        for (int y = 0; y < 6; y++)
+                    for (int x = 0; x < source.Width; x += pixelSize)
+                        for (int y = 0; y < source.Height; y += pixelSize)
                         {
-                            PaletteColor.Color = GarticPalette.GetPixel(x, y);
-
-                            if (ImageColor.Color == GarticPalette.GetPixel(0, 1))
-                                continue;
-
-                            else if (PaletteColor.Color == CurrentColor.Color)
-                            {
-                                mc.btnfast_Click(i + canvasX, j + canvasY);
-                            }
-
-                            else if (PaletteColor.Color == ImageColor.Color)
-                            {
-                                mc.btnSet_Click((x + palletteX) + x * 50, (int)(y + palletteY + numericUpDown1.Value * 20 + y * 50));
-                                mc.btnSet_Click(i + canvasX, j + canvasY);
-                                CurrentColor.Color = PaletteColor.Color;
-                            }
+                            if (source.GetPixel(x, y) == PaletteColor.Color)
+                                mc.btnfast_Click(x + canvasX, y + canvasY);
                         }
-                    }
                 }
-            }
         }
 
 
