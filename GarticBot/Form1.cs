@@ -21,10 +21,8 @@ namespace GarticBot
 
         string radioButton_Tag = "RGB";
 
-
-        public const int VK_SPACE = 0x20; 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-        internal static extern short GetAsyncKeyState(int vkey);
+        [DllImport("KeyPressDLL.dll")]
+        static public extern bool IsKeyPress(int key);
 
 
         MouseClick mc = new MouseClick();
@@ -34,6 +32,7 @@ namespace GarticBot
 
 
         private Thread thread;
+        private Thread whileThread;
 
         public Form1()
         {
@@ -41,8 +40,6 @@ namespace GarticBot
             resolution_trackBar.Enabled = false;
             trackBar_Bright.Enabled = false;
             StartProgarm.Enabled = false;
-            MethodInvoker mi = new MethodInvoker(StopKey);
-            mi.BeginInvoke(null, null);
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,24 +65,28 @@ namespace GarticBot
         private void StartProgarm_Click(object sender, EventArgs e)
         {
             thread = new Thread(Painting);
+            whileThread = new Thread(StopKey);
             WindowState = FormWindowState.Minimized;
-            setResolution();
-            mc.btnSet_Click(1670, 400);
+            mc.btnSet_Click(1670, 550);
             thread.Start();
+            whileThread.Start();
         }
-
 
         private void StopKey()
         {
-            while (this.IsHandleCreated)
+            while (true)
             {
-                short keySPACE = GetAsyncKeyState(VK_SPACE);
+                bool flag = IsKeyPress(27);
 
-                if (keySPACE != 0)
+                if (flag)
+                {
+                    flag = false;
                     thread.Abort();
+                    whileThread.Abort();
+                }
             }
         }
-         
+
         private void ColorModel_changer(object sender, EventArgs e)
         {
             if (radioButton1.Checked == true)
@@ -107,19 +108,24 @@ namespace GarticBot
 
         public void Painting()
         {
+            int x = 0, y = 0;
             SolidBrush PaletteColor = new SolidBrush(Color.Empty);
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 6; j++)
-                {
-                    PaletteColor.Color = GarticPalette.GetPixel(i, j);
+                {     
                     mc.btnSet_Click((i * 50 + palletteX), (int)(j * 50 + palletteY + numericUpDown1.Value * 20));
+                    PaletteColor.Color = GarticPalette.GetPixel(i, j);
 
-                    for (int x = 0; x < source.Width; x += pixelSize)
-                        for (int y = 0; y < source.Height; y += pixelSize)
+                    for (x = 0; x < source.Width; x += pixelSize)
+                        for (y = 0; y < source.Height; y += pixelSize)
                         {
                             if (source.GetPixel(x, y) == PaletteColor.Color)
-                                mc.btnfast_Click(x + canvasX, y + canvasY);
-                        }
+                            {
+                                Thread.Sleep(1);
+                                mc.btnDown_Click(x + canvasX, y + canvasY);
+                                mc.btnUp_Click(x + canvasX + pixelSize, y + canvasY + pixelSize);
+                            }   
+                        }                    
                 }
         }
 
@@ -130,11 +136,6 @@ namespace GarticBot
                 source = pi.PixelImage(BitmapResize, pixelSize, brightness, radioButton_Tag);
 
             Main_PictureBox.Image = source;
-        }
-
-        private void setResolution() //Set brush size
-        {
-            mc.btnSet_Click(brushX - 65 * (resolution_trackBar.Value - 1), brushY);
         }
 
         private void getPixelSize(object sender, EventArgs e)
